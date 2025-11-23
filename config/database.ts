@@ -1,17 +1,30 @@
+// ./config/database.ts
+export default ({ env }) => {
+  const client = env('DATABASE_CLIENT', 'sqlite');
 
-export default ({ env }) => ({
-  connection: {
-    client: 'postgres',
-    connection: {
-      host: env('DATABASE_HOST'),
-      port: env.int('DATABASE_PORT'),
-      database: env('DATABASE_NAME'),
-      user: env('DATABASE_USERNAME'),
-      password: env('DATABASE_PASSWORD'),
-      ssl: {
-        rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
+  const connections: Record<string, any> = {
+    sqlite: {
+      client: 'sqlite',
+      connection: {
+        filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+      },
+      useNullAsDefault: true,
+    },
+
+    postgres: {
+      client: 'postgres',
+      connection: {
+        connectionString: env('DATABASE_URL'),
+        ssl: env.bool('DATABASE_SSL', false)
+          ? {
+            ca: env('DATABASE_CA', undefined),
+          }
+          : false,
       },
     },
-    debug: false,
-  },
-});
+  };
+
+  return {
+    connection: connections[client],
+  };
+};

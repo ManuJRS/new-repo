@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_components_content_intros",
+  "info": {
+    "displayName": "ContentIntro",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "titleh3": {
+      "type": "string",
+      "required": true
+    },
+    "h3Font": {
+      "type": "enumeration",
+      "default": "roboto-mono",
+      "enum": [
+        "anton",
+        "roboto-mono"
+      ]
+    },
+    "titleh1": {
+      "type": "string",
+      "required": true
+    },
+    "h1Uppercase": {
+      "type": "boolean",
+      "default": true
+    },
+    "h1Font": {
+      "type": "enumeration",
+      "default": "anton",
+      "enum": [
+        "anton",
+        "roboto-mono"
+      ]
+    },
+    "titleh2": {
+      "type": "string"
+    },
+    "linkLabel1": {
+      "type": "string"
+    },
+    "linkUrl1": {
+      "type": "string"
+    },
+    "linkLabel2": {
+      "type": "string"
+    },
+    "linkUrl2": {
+      "type": "string"
+    },
+    "showCollapse": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "config": {}
+}

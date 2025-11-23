@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_components_description_projects",
+  "info": {
+    "displayName": "DescriptionProject",
+    "icon": "cup"
+  },
+  "options": {},
+  "attributes": {
+    "rol": {
+      "type": "string",
+      "default": "Mi papel",
+      "required": true
+    },
+    "roltext": {
+      "type": "string"
+    },
+    "stack": {
+      "type": "string",
+      "default": "Tecnología utilizada",
+      "required": true
+    },
+    "stacktext": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string",
+      "default": "Tiempo total",
+      "required": true
+    },
+    "timetext": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
