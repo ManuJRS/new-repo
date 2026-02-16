@@ -50,8 +50,10 @@ export interface ComponentsContentIntro extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'roboto-mono'>;
     linkLabel1: Schema.Attribute.String;
     linkLabel2: Schema.Attribute.String;
+    linkLabel3: Schema.Attribute.String;
     linkUrl1: Schema.Attribute.String;
     linkUrl2: Schema.Attribute.String;
+    linkUrl3: Schema.Attribute.String;
     showCollapse: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;

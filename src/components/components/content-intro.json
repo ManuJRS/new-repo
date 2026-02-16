@@ -49,6 +49,12 @@
     "linkUrl2": {
       "type": "string"
     },
+    "linkLabel3": {
+      "type": "string"
+    },
+    "linkUrl3": {
+      "type": "string"
+    },
     "showCollapse": {
       "type": "boolean",
       "required": true,
