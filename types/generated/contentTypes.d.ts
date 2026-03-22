@@ -624,6 +624,56 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomePortfolioHomePortfolio extends Struct.SingleTypeSchema {
+  collectionName: 'home_portfolios';
+  info: {
+    displayName: 'Home Portfolio';
+    pluralName: 'home-portfolios';
+    singularName: 'home-portfolio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-portfolio.home-portfolio'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'components.hero-minimalf',
+        'components.profile-highlight',
+        'components.stack-grid',
+        'components.selected-works',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -651,6 +701,59 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     >;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     TitlePage: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInfoPortfolioInfoPortfolio extends Struct.SingleTypeSchema {
+  collectionName: 'info_portfolios';
+  info: {
+    displayName: 'Info Portfolio';
+    pluralName: 'info-portfolios';
+    singularName: 'info-portfolio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::info-portfolio.info-portfolio'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      ['components.intro-description', 'components.exp-component']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -714,6 +817,86 @@ export interface ApiLayoutLayout extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     navItems: Schema.Attribute.Component<'navigation.nav-item', true>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProjectPortfolioProjectPortfolio
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'project_portfolios';
+  info: {
+    displayName: 'Project Portfolio';
+    pluralName: 'project-portfolios';
+    singularName: 'project-portfolio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descriptionProyect: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgPreview: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-portfolio.project-portfolio'
+    >;
+    projectTag: Schema.Attribute.Enumeration<['code', 'wordpress']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'code'>;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'components.project-hero-dark',
+        'components.media-content-split',
+        'components.project-text-media',
+        'components.project-technical-breakdown',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1275,9 +1458,12 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
+      'api::home-portfolio.home-portfolio': ApiHomePortfolioHomePortfolio;
       'api::home.home': ApiHomeHome;
+      'api::info-portfolio.info-portfolio': ApiInfoPortfolioInfoPortfolio;
       'api::info.info': ApiInfoInfo;
       'api::layout.layout': ApiLayoutLayout;
+      'api::project-portfolio.project-portfolio': ApiProjectPortfolioProjectPortfolio;
       'api::project.project': ApiProjectProject;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
