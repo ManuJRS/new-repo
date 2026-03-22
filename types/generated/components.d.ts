@@ -311,6 +311,42 @@ export interface ComponentsSelectedWorks extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsSeoComponent extends Struct.ComponentSchema {
+  collectionName: 'components_components_seo_components';
+  info: {
+    displayName: 'SeoComponent';
+    icon: 'question';
+  };
+  attributes: {
+    canonicalURL: Schema.Attribute.String;
+    hideFromSearchEngines: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    metaDescription: Schema.Attribute.Text;
+    metaRobots: Schema.Attribute.Enumeration<
+      [
+        'index, follow',
+        'noindex, follow',
+        'index, nofollow',
+        'noindex, nofollow',
+      ]
+    >;
+    metaTitle: Schema.Attribute.String;
+    ogDescription: Schema.Attribute.Text;
+    ogImage: Schema.Attribute.Media<'images'>;
+    ogTitle: Schema.Attribute.String;
+    ogType: Schema.Attribute.Enumeration<
+      ['website', 'article', 'product', 'profile']
+    >;
+    structuredData: Schema.Attribute.JSON;
+    twitterCard: Schema.Attribute.Enumeration<
+      ['summary', 'summary_large_image']
+    >;
+    twitterDescription: Schema.Attribute.Text;
+    twitterImage: Schema.Attribute.Media<'images'>;
+    twitterTitle: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsSocialLinks extends Struct.ComponentSchema {
   collectionName: 'components_components_social_links';
   info: {
@@ -564,6 +600,7 @@ declare module '@strapi/strapi' {
       'components.project-technical-breakdown': ComponentsProjectTechnicalBreakdown;
       'components.project-text-media': ComponentsProjectTextMedia;
       'components.selected-works': ComponentsSelectedWorks;
+      'components.seo-component': ComponentsSeoComponent;
       'components.social-links': ComponentsSocialLinks;
       'components.stack-grid': ComponentsStackGrid;
       'components.title-divisor': ComponentsTitleDivisor;
