@@ -14,6 +14,10 @@ export default ({ env }) => ({
                 },
                 delete: {},
             },
+            security: {
+                allowedTypes: ['image/*', 'video/*', 'audio/*', 'application/pdf'],
+                deniedTypes: ['application/x-sh', 'application/x-dosexec', 'application/x-executable'],
+            },
         },
     },
 });
