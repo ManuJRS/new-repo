@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_stack_grids",
+  "info": {
+    "displayName": "stack-grid",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "sectionLabel": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "item": {
+      "type": "component",
+      "component": "shared.stack-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

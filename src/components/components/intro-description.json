@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_intro_descriptions",
+  "info": {
+    "displayName": "IntroDescription",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "InfoTag": {
+      "type": "string",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

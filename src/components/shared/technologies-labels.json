@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_technologies_labels",
+  "info": {
+    "displayName": "technologies-labels",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "JavaScript",
+      "required": true
+    }
+  },
+  "config": {}
+}

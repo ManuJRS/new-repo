@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_components_selected_works",
+  "info": {
+    "displayName": "selected-works",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "default": "SELECTED WORKS"
+    },
+    "description": {
+      "type": "text",
+      "default": "A CURATED SELECTION OF TECHNICAL IMPLEMENTATIONS AND DIGITAL EXPLORATIONS."
+    },
+    "showFilters": {
+      "type": "boolean",
+      "default": true
+    },
+    "defaultFilter": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "code",
+        "wordpress"
+      ]
+    },
+    "selectedWorks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project-portfolio.project-portfolio"
+    }
+  },
+  "config": {}
+}

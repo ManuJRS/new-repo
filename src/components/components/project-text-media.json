@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_components_project_text_medias",
+  "info": {
+    "displayName": "project-text-media",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaPosition": {
+      "type": "enumeration",
+      "default": "left",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "eyebrow": {
+      "type": "string",
+      "default": "01 // THE CHALLENGE"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "altMedia": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

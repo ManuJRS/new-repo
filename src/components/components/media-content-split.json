@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_components_media_content_splits",
+  "info": {
+    "displayName": "media-content-split",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaPosition": {
+      "type": "enumeration",
+      "default": "left",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "eyebrow": {
+      "type": "string",
+      "default": "01 / OVERVIEW"
+    },
+    "title": {
+      "type": "string",
+      "default": "THE CHALLENGE"
+    },
+    "description": {
+      "type": "text",
+      "default": "A decentralized visualization engine built for high-frequency data streams within the obsidian ecosystem."
+    },
+    "itemsList": {
+      "type": "component",
+      "component": "shared.items",
+      "repeatable": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "mediaAlt": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
