@@ -83,6 +83,16 @@
         }
       },
       "required": true
+    },
+    "Seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.seo-component",
+      "repeatable": false
     }
   }
 }

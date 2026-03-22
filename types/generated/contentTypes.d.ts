@@ -662,6 +662,12 @@ export interface ApiHomePortfolioHomePortfolio extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    Seo: Schema.Attribute.Component<'components.seo-component', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -735,6 +741,12 @@ export interface ApiInfoPortfolioInfoPortfolio extends Struct.SingleTypeSchema {
     sections: Schema.Attribute.DynamicZone<
       ['components.intro-description', 'components.exp-component']
     > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Schema.Attribute.Component<'components.seo-component', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -879,6 +891,12 @@ export interface ApiProjectPortfolioProjectPortfolio
         'components.project-technical-breakdown',
       ]
     > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Schema.Attribute.Component<'components.seo-component', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
