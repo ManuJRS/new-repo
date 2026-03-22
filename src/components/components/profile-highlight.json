@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_components_profile_highlights",
+  "info": {
+    "displayName": "profile-highlight",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "showSection": {
+      "type": "boolean",
+      "default": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "socialLinks": {
+      "type": "component",
+      "component": "shared.shared-social-link",
+      "repeatable": true
+    },
+    "imageAlt": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

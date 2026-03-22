@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_stack_items",
+  "info": {
+    "displayName": "stack-item",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "VITE"
+    },
+    "showItem": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_components_hero_minimalves",
+  "info": {
+    "displayName": "hero-minimalf",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrowLeft": {
+      "type": "string",
+      "default": "PORTFOLIO / 2026",
+      "required": true
+    },
+    "eyebrowRight": {
+      "type": "string",
+      "default": "AVAILABLE FOR PROJECTS",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "I am a software engineer based in Manchester, focused on creating architectural systems and high-performance digital experiences.",
+      "required": true
+    },
+    "scrollText": {
+      "type": "string",
+      "default": "SCROLL TO EXPLORE",
+      "required": true
+    },
+    "showScrollIndicator": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "anchorId": {
+      "type": "string",
+      "default": "proyects"
+    },
+    "socialLinks": {
+      "type": "component",
+      "component": "shared.shared-social-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

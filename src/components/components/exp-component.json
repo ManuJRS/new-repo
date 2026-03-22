@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_exp_components",
+  "info": {
+    "displayName": "ExpComponent",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Exp": {
+      "type": "component",
+      "component": "shared.exp-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

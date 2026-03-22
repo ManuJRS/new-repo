@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_portfolios",
+  "info": {
+    "singularName": "home-portfolio",
+    "pluralName": "home-portfolios",
+    "displayName": "Home Portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "components.hero-minimalf",
+        "components.profile-highlight",
+        "components.stack-grid",
+        "components.selected-works"
+      ]
+    }
+  }
+}

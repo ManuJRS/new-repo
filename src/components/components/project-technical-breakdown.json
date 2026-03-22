@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_project_technical_breakdowns",
+  "info": {
+    "displayName": "project-technical-breakdown",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "sectionLabel": {
+      "type": "string",
+      "default": "SCHEMATIC BREAKDOWN"
+    },
+    "sectionIndex": {
+      "type": "string",
+      "default": "02 // TECHNICAL SOLUTION"
+    },
+    "highlightTitle": {
+      "type": "string",
+      "default": "THE ARCH CONTROLLER"
+    },
+    "highlightDescription": {
+      "type": "text"
+    },
+    "featuredItem": {
+      "type": "component",
+      "component": "shared.shared-feature-item",
+      "repeatable": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

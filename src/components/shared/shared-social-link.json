@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_shared_social_links",
+  "info": {
+    "displayName": "shared.social-link",
+    "icon": "server"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "GitHub",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "github",
+        "twitter",
+        "youtube",
+        "linkedin",
+        "instagram",
+        "dribbble",
+        "behance",
+        "upwork"
+      ]
+    },
+    "newTab": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "config": {}
+}

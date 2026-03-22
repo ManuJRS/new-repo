@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_items",
+  "info": {
+    "displayName": "items",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "itemsString": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

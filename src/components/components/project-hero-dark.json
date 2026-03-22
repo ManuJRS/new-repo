@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_components_project_hero_darks",
+  "info": {
+    "displayName": "project-hero-dark",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "default": true
+    },
+    "projectCode": {
+      "type": "string",
+      "default": "PROJECT CODE: OX-F3",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "default": "NEURAL ARCH",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "A decentralized visualization engine built for high-frequency data streams within the obsidian ecosystem.",
+      "required": true
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "technologies": {
+      "type": "component",
+      "component": "shared.technologies-labels",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

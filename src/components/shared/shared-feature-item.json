@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_shared_feature_items",
+  "info": {
+    "displayName": "shared.feature-item",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
