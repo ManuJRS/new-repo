@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsCalification extends Struct.ComponentSchema {
+  collectionName: 'components_components_califications';
+  info: {
+    displayName: 'Calification';
+    icon: 'heart';
+  };
+  attributes: {
+    Coment: Schema.Attribute.Component<'shared.comments-califications', true>;
+    Tag: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsCardPreview extends Struct.ComponentSchema {
   collectionName: 'components_components_card_previews';
   info: {
@@ -406,6 +419,29 @@ export interface NavigationNavLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCommentsCalifications extends Struct.ComponentSchema {
+  collectionName: 'components_shared_comments_califications';
+  info: {
+    displayName: 'CommentsCalifications';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    Calification: Schema.Attribute.Decimal &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<5>;
+    Description: Schema.Attribute.Text;
+    Position: Schema.Attribute.String & Schema.Attribute.Required;
+    Tag: Schema.Attribute.Component<'shared.list-tags', true>;
+    TimeLapse: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedExpList extends Struct.ComponentSchema {
   collectionName: 'components_shared_exp_lists';
   info: {
@@ -440,6 +476,17 @@ export interface SharedItems extends Struct.ComponentSchema {
   };
   attributes: {
     itemsString: Schema.Attribute.String;
+  };
+}
+
+export interface SharedListTags extends Struct.ComponentSchema {
+  collectionName: 'components_shared_list_tags';
+  info: {
+    displayName: 'ListTags';
+    icon: 'bulletList';
+  };
+  attributes: {
+    TagText: Schema.Attribute.String;
   };
 }
 
@@ -585,6 +632,7 @@ export interface SharedTechnologiesLabels extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.calification': ComponentsCalification;
       'components.card-preview': ComponentsCardPreview;
       'components.cardmedia': ComponentsCardmedia;
       'components.content-intro': ComponentsContentIntro;
@@ -608,9 +656,11 @@ declare module '@strapi/strapi' {
       'components.title-divisor': ComponentsTitleDivisor;
       'navigation.nav-item': NavigationNavItem;
       'navigation.nav-link': NavigationNavLink;
+      'shared.comments-califications': SharedCommentsCalifications;
       'shared.exp-list': SharedExpList;
       'shared.icon-tec': SharedIconTec;
       'shared.items': SharedItems;
+      'shared.list-tags': SharedListTags;
       'shared.listitem': SharedListitem;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
