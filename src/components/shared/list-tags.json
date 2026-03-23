@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_list_tags",
+  "info": {
+    "displayName": "ListTags",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "TagText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_califications",
+  "info": {
+    "displayName": "Calification",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "Tag": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Coment": {
+      "type": "component",
+      "component": "shared.comments-califications",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
