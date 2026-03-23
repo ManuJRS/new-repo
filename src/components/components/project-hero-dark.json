@@ -38,6 +38,12 @@
       "type": "component",
       "component": "shared.technologies-labels",
       "repeatable": true
+    },
+    "urlText": {
+      "type": "string"
+    },
+    "urlProject": {
+      "type": "string"
     }
   },
   "config": {}
