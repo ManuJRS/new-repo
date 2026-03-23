@@ -245,6 +245,8 @@ export interface ComponentsProjectHeroDark extends Struct.ComponentSchema {
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'NEURAL ARCH'>;
+    urlProject: Schema.Attribute.String;
+    urlText: Schema.Attribute.String;
   };
 }
 
