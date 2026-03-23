@@ -34,7 +34,8 @@
         "components.hero-minimalf",
         "components.profile-highlight",
         "components.stack-grid",
-        "components.selected-works"
+        "components.selected-works",
+        "components.calification"
       ]
     },
     "Seo": {

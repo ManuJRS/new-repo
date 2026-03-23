@@ -655,6 +655,7 @@ export interface ApiHomePortfolioHomePortfolio extends Struct.SingleTypeSchema {
         'components.profile-highlight',
         'components.stack-grid',
         'components.selected-works',
+        'components.calification',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
