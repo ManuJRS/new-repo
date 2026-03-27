@@ -218,6 +218,30 @@ export interface ComponentsMediaContentSplit extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsPortfolioPreview extends Struct.ComponentSchema {
+  collectionName: 'components_components_portfolio_previews';
+  info: {
+    displayName: 'Web Develop Portfolio preview';
+    icon: 'briefcase';
+  };
+  attributes: {
+    Description: Schema.Attribute.String;
+    FirstDescription: Schema.Attribute.String;
+    FirstImg: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    FirstTag: Schema.Attribute.String;
+    FirstTextBtn: Schema.Attribute.String;
+    FirstTextUrl: Schema.Attribute.String;
+    FirstTitle: Schema.Attribute.String;
+    SecondDescription: Schema.Attribute.String;
+    SecondImg: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    SecondTag: Schema.Attribute.String;
+    SecondTextBtn: Schema.Attribute.String;
+    SecondTextUrl: Schema.Attribute.String;
+    SecondTitle: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsProfileHighlight extends Struct.ComponentSchema {
   collectionName: 'components_components_profile_highlights';
   info: {
@@ -392,6 +416,79 @@ export interface ComponentsTitleDivisor extends Struct.ComponentSchema {
   };
   attributes: {
     titleDivisor: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsWebDevelopHero extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_heroes';
+  info: {
+    displayName: 'web-develop-hero';
+    icon: 'alien';
+  };
+  attributes: {
+    Tag: Schema.Attribute.String;
+    TextBtn: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+    UrlBtn: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsWebDevelopResources extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_resources';
+  info: {
+    displayName: 'web-develop-resources';
+    icon: 'cup';
+  };
+  attributes: {
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+    btnText: Schema.Attribute.String;
+    btnUrl: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsWebDevelopTimeline extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_timelines';
+  info: {
+    displayName: 'web-develop-timeline';
+    icon: 'arrowRight';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    items: Schema.Attribute.Component<
+      'shared.web-develop-items-timeline',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsWebDevelopVideo extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_videos';
+  info: {
+    displayName: 'web-develop-video';
+    icon: 'cast';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'shared.web-develop-feature', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -629,6 +726,33 @@ export interface SharedTechnologiesLabels extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedWebDevelopFeature extends Struct.ComponentSchema {
+  collectionName: 'components_shared_web_develop_features';
+  info: {
+    displayName: 'webDevelopFeature';
+    icon: 'message';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icons: Schema.Attribute.Enumeration<
+      ['icon 1', 'icon 2', 'icon 3', 'icon 4']
+    >;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedWebDevelopItemsTimeline extends Struct.ComponentSchema {
+  collectionName: 'components_shared_web_develop_items_timelines';
+  info: {
+    displayName: 'web-develop-items-timeline';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icons: Schema.Attribute.Enumeration<['one', 'two', 'three', 'four']>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -645,6 +769,7 @@ declare module '@strapi/strapi' {
       'components.intro-description': ComponentsIntroDescription;
       'components.intro-project': ComponentsIntroProject;
       'components.media-content-split': ComponentsMediaContentSplit;
+      'components.portfolio-preview': ComponentsPortfolioPreview;
       'components.profile-highlight': ComponentsProfileHighlight;
       'components.project-hero-dark': ComponentsProjectHeroDark;
       'components.project-technical-breakdown': ComponentsProjectTechnicalBreakdown;
@@ -654,6 +779,10 @@ declare module '@strapi/strapi' {
       'components.social-links': ComponentsSocialLinks;
       'components.stack-grid': ComponentsStackGrid;
       'components.title-divisor': ComponentsTitleDivisor;
+      'components.web-develop-hero': ComponentsWebDevelopHero;
+      'components.web-develop-resources': ComponentsWebDevelopResources;
+      'components.web-develop-timeline': ComponentsWebDevelopTimeline;
+      'components.web-develop-video': ComponentsWebDevelopVideo;
       'navigation.nav-item': NavigationNavItem;
       'navigation.nav-link': NavigationNavLink;
       'shared.comments-califications': SharedCommentsCalifications;
@@ -671,6 +800,8 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.stack-item': SharedStackItem;
       'shared.technologies-labels': SharedTechnologiesLabels;
+      'shared.web-develop-feature': SharedWebDevelopFeature;
+      'shared.web-develop-items-timeline': SharedWebDevelopItemsTimeline;
     }
   }
 }
