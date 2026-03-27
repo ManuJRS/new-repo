@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "web_develops",
+  "info": {
+    "singularName": "web-develop",
+    "pluralName": "web-develops",
+    "displayName": "Web Develop"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "components.web-develop-hero",
+        "components.web-develop-video",
+        "components.web-develop-timeline",
+        "components.portfolio-preview",
+        "components.web-develop-resources"
+      ]
+    }
+  }
+}
