@@ -1,0 +1,65 @@
+{
+  "collectionName": "components_components_portfolio_previews",
+  "info": {
+    "displayName": "Web Develop Portfolio preview",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "FirstTag": {
+      "type": "string"
+    },
+    "FirstTitle": {
+      "type": "string"
+    },
+    "FirstDescription": {
+      "type": "string"
+    },
+    "FirstTextUrl": {
+      "type": "string"
+    },
+    "FirstTextBtn": {
+      "type": "string"
+    },
+    "FirstImg": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "SecondTag": {
+      "type": "string"
+    },
+    "SecondTitle": {
+      "type": "string"
+    },
+    "SecondDescription": {
+      "type": "string"
+    },
+    "SecondTextUrl": {
+      "type": "string"
+    },
+    "SecondTextBtn": {
+      "type": "string"
+    },
+    "SecondImg": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

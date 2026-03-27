@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_web_develop_heroes",
+  "info": {
+    "displayName": "web-develop-hero",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Tag": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "TextBtn": {
+      "type": "string"
+    },
+    "UrlBtn": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
