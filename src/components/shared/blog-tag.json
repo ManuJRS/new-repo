@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_blog_tags",
+  "info": {
+    "displayName": "Blog-tag"
+  },
+  "options": {},
+  "attributes": {
+    "Tags": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

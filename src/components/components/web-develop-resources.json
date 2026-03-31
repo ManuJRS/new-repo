@@ -12,10 +12,10 @@
     "description": {
       "type": "string"
     },
-    "blogs": {
+    "blogs_articles": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::blog.blog"
+      "target": "api::blogs-article.blogs-article"
     },
     "btnText": {
       "type": "string"

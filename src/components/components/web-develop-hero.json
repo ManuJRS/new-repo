@@ -17,6 +17,15 @@
     },
     "UrlBtn": {
       "type": "string"
+    },
+    "MediaHero": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     }
   },
   "config": {}
