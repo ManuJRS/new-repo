@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "blogs",
   "info": {
     "singularName": "blog",
@@ -18,15 +18,16 @@
       "type": "uid",
       "targetField": "title"
     },
-    "descriptionProyect": {
-      "type": "text"
+    "blogs_articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blogs-article.blogs-article"
     },
-    "imgPreview": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images"
-      ]
+    "TitleIntro": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }

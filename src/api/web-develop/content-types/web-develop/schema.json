@@ -28,6 +28,11 @@
         "components.portfolio-preview",
         "components.web-develop-resources"
       ]
+    },
+    "Seo": {
+      "type": "component",
+      "component": "components.seo-component",
+      "repeatable": false
     }
   }
 }
