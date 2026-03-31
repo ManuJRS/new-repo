@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_bullets_lists",
+  "info": {
+    "displayName": "Blog-Bullets-list",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "TitleList": {
+      "type": "string"
+    },
+    "DescriptionList": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_components_web_develop_videos",
+  "info": {
+    "displayName": "web-develop-video",
+    "icon": "cast"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "features": {
+      "type": "component",
+      "component": "shared.web-develop-feature",
+      "repeatable": true,
+      "min": 4,
+      "max": 4
+    }
+  },
+  "config": {}
+}

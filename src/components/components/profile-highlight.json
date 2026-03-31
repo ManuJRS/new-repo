@@ -23,7 +23,8 @@
       "type": "media",
       "multiple": true,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos"
       ]
     },
     "socialLinks": {

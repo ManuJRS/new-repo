@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_blog_heroes",
+  "info": {
+    "displayName": "blog-hero",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Author": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

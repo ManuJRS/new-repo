@@ -531,6 +531,79 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogBlog extends Struct.SingleTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogs_articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blogs-article.blogs-article'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    TitleIntro: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogsArticleBlogsArticle
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs_articles';
+  info: {
+    displayName: 'blogs article';
+    pluralName: 'blogs-articles';
+    singularName: 'blogs-article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BlogSections: Schema.Attribute.DynamicZone<
+      [
+        'components.blog-hero',
+        'components.blog-content',
+        'components.content-list',
+        'shared.code-block',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DescriptionProyect: Schema.Attribute.Text;
+    ImgPreview: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blogs-article.blogs-article'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Title'>;
+    Tags: Schema.Attribute.Component<'shared.blog-tag', true>;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -955,6 +1028,45 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWebDevelopWebDevelop extends Struct.SingleTypeSchema {
+  collectionName: 'web_develops';
+  info: {
+    displayName: 'Web Develop';
+    pluralName: 'web-develops';
+    singularName: 'web-develop';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-develop.web-develop'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'components.web-develop-hero',
+        'components.web-develop-video',
+        'components.web-develop-timeline',
+        'components.portfolio-preview',
+        'components.web-develop-resources',
+      ]
+    >;
+    Seo: Schema.Attribute.Component<'components.seo-component', false>;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1474,6 +1586,8 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::blog.blog': ApiBlogBlog;
+      'api::blogs-article.blogs-article': ApiBlogsArticleBlogsArticle;
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
@@ -1484,6 +1598,7 @@ declare module '@strapi/strapi' {
       'api::layout.layout': ApiLayoutLayout;
       'api::project-portfolio.project-portfolio': ApiProjectPortfolioProjectPortfolio;
       'api::project.project': ApiProjectProject;
+      'api::web-develop.web-develop': ApiWebDevelopWebDevelop;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_web_develop_timelines",
+  "info": {
+    "displayName": "web-develop-timeline",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.web-develop-items-timeline",
+      "repeatable": true,
+      "min": 4,
+      "max": 4
+    }
+  },
+  "config": {}
+}

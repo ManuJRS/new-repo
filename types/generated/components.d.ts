@@ -1,5 +1,34 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsBlogContent extends Struct.ComponentSchema {
+  collectionName: 'components_components_blog_contents';
+  info: {
+    displayName: 'Blog-content';
+    icon: 'layout';
+  };
+  attributes: {
+    AltMedia: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    SemanticHeading: Schema.Attribute.Component<'shared.blog-shared-hs', false>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsBlogHero extends Struct.ComponentSchema {
+  collectionName: 'components_components_blog_heroes';
+  info: {
+    displayName: 'blog-hero';
+    icon: 'alien';
+  };
+  attributes: {
+    Author: Schema.Attribute.String;
+    Date: Schema.Attribute.Date;
+    Description: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsCalification extends Struct.ComponentSchema {
   collectionName: 'components_components_califications';
   info: {
@@ -73,6 +102,18 @@ export interface ComponentsContentIntro extends Struct.ComponentSchema {
     titleh1: Schema.Attribute.String & Schema.Attribute.Required;
     titleh2: Schema.Attribute.String;
     titleh3: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsContentList extends Struct.ComponentSchema {
+  collectionName: 'components_components_content_lists';
+  info: {
+    displayName: 'Blog-ContentList';
+    icon: 'bulletList';
+  };
+  attributes: {
+    List: Schema.Attribute.Component<'shared.bullets-list', true>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -218,6 +259,30 @@ export interface ComponentsMediaContentSplit extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsPortfolioPreview extends Struct.ComponentSchema {
+  collectionName: 'components_components_portfolio_previews';
+  info: {
+    displayName: 'Web Develop Portfolio preview';
+    icon: 'briefcase';
+  };
+  attributes: {
+    Description: Schema.Attribute.String;
+    FirstDescription: Schema.Attribute.String;
+    FirstImg: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    FirstTag: Schema.Attribute.String;
+    FirstTextBtn: Schema.Attribute.String;
+    FirstTextUrl: Schema.Attribute.String;
+    FirstTitle: Schema.Attribute.String;
+    SecondDescription: Schema.Attribute.String;
+    SecondImg: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    SecondTag: Schema.Attribute.String;
+    SecondTextBtn: Schema.Attribute.String;
+    SecondTextUrl: Schema.Attribute.String;
+    SecondTitle: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsProfileHighlight extends Struct.ComponentSchema {
   collectionName: 'components_components_profile_highlights';
   info: {
@@ -226,7 +291,7 @@ export interface ComponentsProfileHighlight extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images', true>;
+    image: Schema.Attribute.Media<'images' | 'videos', true>;
     imageAlt: Schema.Attribute.String;
     name: Schema.Attribute.String;
     role: Schema.Attribute.String;
@@ -395,6 +460,83 @@ export interface ComponentsTitleDivisor extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsWebDevelopHero extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_heroes';
+  info: {
+    displayName: 'web-develop-hero';
+    icon: 'alien';
+  };
+  attributes: {
+    MediaHero: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    Tag: Schema.Attribute.String;
+    TextBtn: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+    UrlBtn: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsWebDevelopResources extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_resources';
+  info: {
+    displayName: 'web-develop-resources';
+    icon: 'cup';
+  };
+  attributes: {
+    blogs_articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blogs-article.blogs-article'
+    >;
+    btnText: Schema.Attribute.String;
+    btnUrl: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsWebDevelopTimeline extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_timelines';
+  info: {
+    displayName: 'web-develop-timeline';
+    icon: 'arrowRight';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    items: Schema.Attribute.Component<
+      'shared.web-develop-items-timeline',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsWebDevelopVideo extends Struct.ComponentSchema {
+  collectionName: 'components_components_web_develop_videos';
+  info: {
+    displayName: 'web-develop-video';
+    icon: 'cast';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'shared.web-develop-feature', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface NavigationNavItem extends Struct.ComponentSchema {
   collectionName: 'components_navigation_nav_items';
   info: {
@@ -416,6 +558,52 @@ export interface NavigationNavLink extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBlogSharedHs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blog_shared_hs';
+  info: {
+    displayName: 'Blog-shared-hs';
+  };
+  attributes: {
+    SemanticHeading: Schema.Attribute.Enumeration<['h2', 'h3', 'h4', 'h5']>;
+  };
+}
+
+export interface SharedBlogTag extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blog_tags';
+  info: {
+    displayName: 'Blog-tag';
+  };
+  attributes: {
+    Tags: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBulletsList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bullets_lists';
+  info: {
+    displayName: 'Blog-Bullets-list';
+    icon: 'bulletList';
+  };
+  attributes: {
+    DescriptionList: Schema.Attribute.String;
+    TitleList: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCodeBlock extends Struct.ComponentSchema {
+  collectionName: 'components_shared_code_blocks';
+  info: {
+    displayName: 'Blog-code-block';
+    icon: 'code';
+  };
+  attributes: {
+    Code: Schema.Attribute.Text;
+    filename: Schema.Attribute.String;
+    Language: Schema.Attribute.Enumeration<['HTML', 'CSS', 'JS', 'TS', 'VUE']>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -629,13 +817,43 @@ export interface SharedTechnologiesLabels extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedWebDevelopFeature extends Struct.ComponentSchema {
+  collectionName: 'components_shared_web_develop_features';
+  info: {
+    displayName: 'webDevelopFeature';
+    icon: 'message';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icons: Schema.Attribute.Enumeration<
+      ['icon 1', 'icon 2', 'icon 3', 'icon 4']
+    >;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedWebDevelopItemsTimeline extends Struct.ComponentSchema {
+  collectionName: 'components_shared_web_develop_items_timelines';
+  info: {
+    displayName: 'web-develop-items-timeline';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icons: Schema.Attribute.Enumeration<['one', 'two', 'three', 'four']>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.blog-content': ComponentsBlogContent;
+      'components.blog-hero': ComponentsBlogHero;
       'components.calification': ComponentsCalification;
       'components.card-preview': ComponentsCardPreview;
       'components.cardmedia': ComponentsCardmedia;
       'components.content-intro': ComponentsContentIntro;
+      'components.content-list': ComponentsContentList;
       'components.content-text-list': ComponentsContentTextList;
       'components.dasdasd': ComponentsDasdasd;
       'components.description-project': ComponentsDescriptionProject;
@@ -645,6 +863,7 @@ declare module '@strapi/strapi' {
       'components.intro-description': ComponentsIntroDescription;
       'components.intro-project': ComponentsIntroProject;
       'components.media-content-split': ComponentsMediaContentSplit;
+      'components.portfolio-preview': ComponentsPortfolioPreview;
       'components.profile-highlight': ComponentsProfileHighlight;
       'components.project-hero-dark': ComponentsProjectHeroDark;
       'components.project-technical-breakdown': ComponentsProjectTechnicalBreakdown;
@@ -654,8 +873,16 @@ declare module '@strapi/strapi' {
       'components.social-links': ComponentsSocialLinks;
       'components.stack-grid': ComponentsStackGrid;
       'components.title-divisor': ComponentsTitleDivisor;
+      'components.web-develop-hero': ComponentsWebDevelopHero;
+      'components.web-develop-resources': ComponentsWebDevelopResources;
+      'components.web-develop-timeline': ComponentsWebDevelopTimeline;
+      'components.web-develop-video': ComponentsWebDevelopVideo;
       'navigation.nav-item': NavigationNavItem;
       'navigation.nav-link': NavigationNavLink;
+      'shared.blog-shared-hs': SharedBlogSharedHs;
+      'shared.blog-tag': SharedBlogTag;
+      'shared.bullets-list': SharedBulletsList;
+      'shared.code-block': SharedCodeBlock;
       'shared.comments-califications': SharedCommentsCalifications;
       'shared.exp-list': SharedExpList;
       'shared.icon-tec': SharedIconTec;
@@ -671,6 +898,8 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.stack-item': SharedStackItem;
       'shared.technologies-labels': SharedTechnologiesLabels;
+      'shared.web-develop-feature': SharedWebDevelopFeature;
+      'shared.web-develop-items-timeline': SharedWebDevelopItemsTimeline;
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_code_blocks",
+  "info": {
+    "displayName": "Blog-code-block",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Language": {
+      "type": "enumeration",
+      "enum": [
+        "HTML",
+        "CSS",
+        "JS",
+        "TS",
+        "VUE"
+      ]
+    },
+    "filename": {
+      "type": "string"
+    },
+    "Code": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

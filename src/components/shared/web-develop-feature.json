@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_web_develop_features",
+  "info": {
+    "displayName": "webDevelopFeature",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "icons": {
+      "type": "enumeration",
+      "enum": [
+        "icon 1",
+        "icon 2",
+        "icon 3",
+        "icon 4"
+      ]
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

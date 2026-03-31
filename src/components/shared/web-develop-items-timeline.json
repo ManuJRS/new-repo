@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_web_develop_items_timelines",
+  "info": {
+    "displayName": "web-develop-items-timeline"
+  },
+  "options": {},
+  "attributes": {
+    "icons": {
+      "type": "enumeration",
+      "enum": [
+        "one",
+        "two",
+        "three",
+        "four"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_components_web_develop_resources",
+  "info": {
+    "displayName": "web-develop-resources",
+    "icon": "cup"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "blogs_articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blogs-article.blogs-article"
+    },
+    "btnText": {
+      "type": "string"
+    },
+    "btnUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

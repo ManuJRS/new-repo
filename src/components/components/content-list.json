@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_content_lists",
+  "info": {
+    "displayName": "Blog-ContentList",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "List": {
+      "type": "component",
+      "component": "shared.bullets-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
