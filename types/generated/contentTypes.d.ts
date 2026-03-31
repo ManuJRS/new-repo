@@ -531,7 +531,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+export interface ApiBlogBlog extends Struct.SingleTypeSchema {
   collectionName: 'blogs';
   info: {
     displayName: 'Blog';
@@ -542,17 +542,62 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    blogs_articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blogs-article.blogs-article'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    descriptionProyect: Schema.Attribute.Text;
-    imgPreview: Schema.Attribute.Media<'images', true>;
+    Description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
+    TitleIntro: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogsArticleBlogsArticle
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs_articles';
+  info: {
+    displayName: 'blogs article';
+    pluralName: 'blogs-articles';
+    singularName: 'blogs-article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BlogSections: Schema.Attribute.DynamicZone<
+      [
+        'components.blog-hero',
+        'components.blog-content',
+        'components.content-list',
+        'shared.code-block',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DescriptionProyect: Schema.Attribute.Text;
+    ImgPreview: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blogs-article.blogs-article'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Title'>;
+    Tags: Schema.Attribute.Component<'shared.blog-tag', true>;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1019,6 +1064,7 @@ export interface ApiWebDevelopWebDevelop extends Struct.SingleTypeSchema {
         'components.web-develop-resources',
       ]
     >;
+    Seo: Schema.Attribute.Component<'components.seo-component', false>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -1541,6 +1587,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
+      'api::blogs-article.blogs-article': ApiBlogsArticleBlogsArticle;
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;

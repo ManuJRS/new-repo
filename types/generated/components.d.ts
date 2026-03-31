@@ -1,5 +1,34 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsBlogContent extends Struct.ComponentSchema {
+  collectionName: 'components_components_blog_contents';
+  info: {
+    displayName: 'Blog-content';
+    icon: 'layout';
+  };
+  attributes: {
+    AltMedia: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    SemanticHeading: Schema.Attribute.Component<'shared.blog-shared-hs', false>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsBlogHero extends Struct.ComponentSchema {
+  collectionName: 'components_components_blog_heroes';
+  info: {
+    displayName: 'blog-hero';
+    icon: 'alien';
+  };
+  attributes: {
+    Author: Schema.Attribute.String;
+    Date: Schema.Attribute.Date;
+    Description: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsCalification extends Struct.ComponentSchema {
   collectionName: 'components_components_califications';
   info: {
@@ -73,6 +102,18 @@ export interface ComponentsContentIntro extends Struct.ComponentSchema {
     titleh1: Schema.Attribute.String & Schema.Attribute.Required;
     titleh2: Schema.Attribute.String;
     titleh3: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsContentList extends Struct.ComponentSchema {
+  collectionName: 'components_components_content_lists';
+  info: {
+    displayName: 'Blog-ContentList';
+    icon: 'bulletList';
+  };
+  attributes: {
+    List: Schema.Attribute.Component<'shared.bullets-list', true>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -250,7 +291,7 @@ export interface ComponentsProfileHighlight extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images', true>;
+    image: Schema.Attribute.Media<'images' | 'videos', true>;
     imageAlt: Schema.Attribute.String;
     name: Schema.Attribute.String;
     role: Schema.Attribute.String;
@@ -426,6 +467,7 @@ export interface ComponentsWebDevelopHero extends Struct.ComponentSchema {
     icon: 'alien';
   };
   attributes: {
+    MediaHero: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     Tag: Schema.Attribute.String;
     TextBtn: Schema.Attribute.String;
     Title: Schema.Attribute.String;
@@ -440,7 +482,10 @@ export interface ComponentsWebDevelopResources extends Struct.ComponentSchema {
     icon: 'cup';
   };
   attributes: {
-    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+    blogs_articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blogs-article.blogs-article'
+    >;
     btnText: Schema.Attribute.String;
     btnUrl: Schema.Attribute.String;
     description: Schema.Attribute.String;
@@ -513,6 +558,52 @@ export interface NavigationNavLink extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBlogSharedHs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blog_shared_hs';
+  info: {
+    displayName: 'Blog-shared-hs';
+  };
+  attributes: {
+    SemanticHeading: Schema.Attribute.Enumeration<['h2', 'h3', 'h4', 'h5']>;
+  };
+}
+
+export interface SharedBlogTag extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blog_tags';
+  info: {
+    displayName: 'Blog-tag';
+  };
+  attributes: {
+    Tags: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBulletsList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bullets_lists';
+  info: {
+    displayName: 'Blog-Bullets-list';
+    icon: 'bulletList';
+  };
+  attributes: {
+    DescriptionList: Schema.Attribute.String;
+    TitleList: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCodeBlock extends Struct.ComponentSchema {
+  collectionName: 'components_shared_code_blocks';
+  info: {
+    displayName: 'Blog-code-block';
+    icon: 'code';
+  };
+  attributes: {
+    Code: Schema.Attribute.Text;
+    filename: Schema.Attribute.String;
+    Language: Schema.Attribute.Enumeration<['HTML', 'CSS', 'JS', 'TS', 'VUE']>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -756,10 +847,13 @@ export interface SharedWebDevelopItemsTimeline extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.blog-content': ComponentsBlogContent;
+      'components.blog-hero': ComponentsBlogHero;
       'components.calification': ComponentsCalification;
       'components.card-preview': ComponentsCardPreview;
       'components.cardmedia': ComponentsCardmedia;
       'components.content-intro': ComponentsContentIntro;
+      'components.content-list': ComponentsContentList;
       'components.content-text-list': ComponentsContentTextList;
       'components.dasdasd': ComponentsDasdasd;
       'components.description-project': ComponentsDescriptionProject;
@@ -785,6 +879,10 @@ declare module '@strapi/strapi' {
       'components.web-develop-video': ComponentsWebDevelopVideo;
       'navigation.nav-item': NavigationNavItem;
       'navigation.nav-link': NavigationNavLink;
+      'shared.blog-shared-hs': SharedBlogSharedHs;
+      'shared.blog-tag': SharedBlogTag;
+      'shared.bullets-list': SharedBulletsList;
+      'shared.code-block': SharedCodeBlock;
       'shared.comments-califications': SharedCommentsCalifications;
       'shared.exp-list': SharedExpList;
       'shared.icon-tec': SharedIconTec;
