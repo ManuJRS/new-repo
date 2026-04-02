@@ -65,6 +65,29 @@ export interface ComponentsCardPreview extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsCardSolution extends Struct.ComponentSchema {
+  collectionName: 'components_components_card_solutions';
+  info: {
+    displayName: 'CardSolution';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Cards: Schema.Attribute.Component<'shared.solutions-cards', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 3;
+        },
+        number
+      >;
+    ctaLink: Schema.Attribute.String;
+    ctaText: Schema.Attribute.String;
+    ctaTitle: Schema.Attribute.String;
+    tag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsCardmedia extends Struct.ComponentSchema {
   collectionName: 'components_components_cardmedias';
   info: {
@@ -75,6 +98,54 @@ export interface ComponentsCardmedia extends Struct.ComponentSchema {
     linktext: Schema.Attribute.String;
     linkurl: Schema.Attribute.String;
     media: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface ComponentsCardsSection extends Struct.ComponentSchema {
+  collectionName: 'components_components_cards_sections';
+  info: {
+    displayName: 'cards-section';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Cards: Schema.Attribute.Component<'shared.secction-technical', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 3;
+        },
+        number
+      >;
+    tag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsCardsTitle extends Struct.ComponentSchema {
+  collectionName: 'components_components_cards_titles';
+  info: {
+    displayName: 'CardsTestimonials';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.testimonial', true>;
+    tag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsCommentSecction extends Struct.ComponentSchema {
+  collectionName: 'components_components_comment_secctions';
+  info: {
+    displayName: 'comment secction';
+    icon: 'command';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    itemFour: Schema.Attribute.String;
+    itemOne: Schema.Attribute.String;
+    itemThree: Schema.Attribute.String;
+    itemTwo: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -172,6 +243,26 @@ export interface ComponentsExpComponent extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsFormWeb extends Struct.ComponentSchema {
+  collectionName: 'components_components_form_webs';
+  info: {
+    displayName: 'FormWeb';
+    icon: 'message';
+  };
+  attributes: {
+    btnText: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    inputEmail: Schema.Attribute.String;
+    inputMessage: Schema.Attribute.String;
+    inputName: Schema.Attribute.String;
+    inputStage: Schema.Attribute.String;
+    select: Schema.Attribute.Enumeration<
+      ['Pagina desde cero', 'Migraci\u00F3n/Redise\u00F1o', 'Mantenimiento']
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsHeroMinimalf extends Struct.ComponentSchema {
   collectionName: 'components_components_hero_minimalves';
   info: {
@@ -196,6 +287,21 @@ export interface ComponentsHeroMinimalf extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
     socialLinks: Schema.Attribute.Component<'shared.shared-social-link', true>;
+  };
+}
+
+export interface ComponentsHowIDo extends Struct.ComponentSchema {
+  collectionName: 'components_components_how_i_dos';
+  info: {
+    displayName: 'How I Do';
+    icon: 'search';
+  };
+  attributes: {
+    Cards: Schema.Attribute.Component<'shared.how-cards', true>;
+    imageOne: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    tag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -234,6 +340,20 @@ export interface ComponentsIntroProject extends Struct.ComponentSchema {
     textIntro: Schema.Attribute.Text;
     titleIntro: Schema.Attribute.String;
     uppercase: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ComponentsLogos extends Struct.ComponentSchema {
+  collectionName: 'components_components_logos';
+  info: {
+    displayName: 'logos';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -469,6 +589,7 @@ export interface ComponentsWebDevelopHero extends Struct.ComponentSchema {
   attributes: {
     MediaHero: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     Tag: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
     TextBtn: Schema.Attribute.String;
     Title: Schema.Attribute.String;
     UrlBtn: Schema.Attribute.String;
@@ -644,6 +765,19 @@ export interface SharedExpList extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHowCards extends Struct.ComponentSchema {
+  collectionName: 'components_shared_how_cards';
+  info: {
+    displayName: 'How Cards';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    number: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedIconTec extends Struct.ComponentSchema {
   collectionName: 'components_shared_icon_tecs';
   info: {
@@ -724,6 +858,22 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSecctionTechnical extends Struct.ComponentSchema {
+  collectionName: 'components_shared_secction_technicals';
+  info: {
+    displayName: 'secction technical';
+    icon: 'doctor';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
+    iconOne: Schema.Attribute.String;
+    iconThree: Schema.Attribute.String;
+    iconTwo: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -792,6 +942,23 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSolutionsCards extends Struct.ComponentSchema {
+  collectionName: 'components_shared_solutions_cards';
+  info: {
+    displayName: 'Solutions cards';
+    icon: 'stack';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    itemOne: Schema.Attribute.String;
+    itemThree: Schema.Attribute.String;
+    itemTwo: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedStackItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_stack_items';
   info: {
@@ -814,6 +981,19 @@ export interface SharedTechnologiesLabels extends Struct.ComponentSchema {
     label: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'JavaScript'>;
+  };
+}
+
+export interface SharedTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials';
+  info: {
+    displayName: 'testimonial';
+    icon: 'earth';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -851,17 +1031,24 @@ declare module '@strapi/strapi' {
       'components.blog-hero': ComponentsBlogHero;
       'components.calification': ComponentsCalification;
       'components.card-preview': ComponentsCardPreview;
+      'components.card-solution': ComponentsCardSolution;
       'components.cardmedia': ComponentsCardmedia;
+      'components.cards-section': ComponentsCardsSection;
+      'components.cards-title': ComponentsCardsTitle;
+      'components.comment-secction': ComponentsCommentSecction;
       'components.content-intro': ComponentsContentIntro;
       'components.content-list': ComponentsContentList;
       'components.content-text-list': ComponentsContentTextList;
       'components.dasdasd': ComponentsDasdasd;
       'components.description-project': ComponentsDescriptionProject;
       'components.exp-component': ComponentsExpComponent;
+      'components.form-web': ComponentsFormWeb;
       'components.hero-minimalf': ComponentsHeroMinimalf;
+      'components.how-i-do': ComponentsHowIDo;
       'components.incon-arrrow': ComponentsInconArrrow;
       'components.intro-description': ComponentsIntroDescription;
       'components.intro-project': ComponentsIntroProject;
+      'components.logos': ComponentsLogos;
       'components.media-content-split': ComponentsMediaContentSplit;
       'components.portfolio-preview': ComponentsPortfolioPreview;
       'components.profile-highlight': ComponentsProfileHighlight;
@@ -885,6 +1072,7 @@ declare module '@strapi/strapi' {
       'shared.code-block': SharedCodeBlock;
       'shared.comments-califications': SharedCommentsCalifications;
       'shared.exp-list': SharedExpList;
+      'shared.how-cards': SharedHowCards;
       'shared.icon-tec': SharedIconTec;
       'shared.items': SharedItems;
       'shared.list-tags': SharedListTags;
@@ -892,12 +1080,15 @@ declare module '@strapi/strapi' {
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
+      'shared.secction-technical': SharedSecctionTechnical;
       'shared.seo': SharedSeo;
       'shared.shared-feature-item': SharedSharedFeatureItem;
       'shared.shared-social-link': SharedSharedSocialLink;
       'shared.slider': SharedSlider;
+      'shared.solutions-cards': SharedSolutionsCards;
       'shared.stack-item': SharedStackItem;
       'shared.technologies-labels': SharedTechnologiesLabels;
+      'shared.testimonial': SharedTestimonial;
       'shared.web-develop-feature': SharedWebDevelopFeature;
       'shared.web-develop-items-timeline': SharedWebDevelopItemsTimeline;
     }
