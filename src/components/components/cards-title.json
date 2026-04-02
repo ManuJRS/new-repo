@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_cards_titles",
+  "info": {
+    "displayName": "CardsTestimonials"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
