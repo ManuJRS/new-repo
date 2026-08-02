@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_comment_secctions",
+  "info": {
+    "displayName": "comment secction",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "itemOne": {
+      "type": "string"
+    },
+    "itemTwo": {
+      "type": "string"
+    },
+    "itemThree": {
+      "type": "string"
+    },
+    "itemFour": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

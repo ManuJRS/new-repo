@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_components_form_webs",
+  "info": {
+    "displayName": "FormWeb",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "inputName": {
+      "type": "string"
+    },
+    "inputEmail": {
+      "type": "string"
+    },
+    "inputStage": {
+      "type": "string"
+    },
+    "select": {
+      "type": "enumeration",
+      "enum": [
+        "Pagina desde cero",
+        "Migración/Rediseño",
+        "Mantenimiento"
+      ]
+    },
+    "inputMessage": {
+      "type": "string"
+    },
+    "btnText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

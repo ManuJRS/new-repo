@@ -1,24 +1,30 @@
 {
-  "collectionName": "components_components_web_develop_heroes",
+  "collectionName": "components_shared_solutions_cards",
   "info": {
-    "displayName": "web-develop-hero",
-    "icon": "alien"
+    "displayName": "Solutions cards",
+    "icon": "stack"
   },
   "options": {},
   "attributes": {
-    "Tag": {
+    "icon": {
       "type": "string"
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "TextBtn": {
+    "description": {
+      "type": "text"
+    },
+    "itemOne": {
       "type": "string"
     },
-    "UrlBtn": {
+    "itemTwo": {
       "type": "string"
     },
-    "MediaHero": {
+    "itemThree": {
+      "type": "string"
+    },
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -26,9 +32,6 @@
         "files",
         "videos"
       ]
-    },
-    "text": {
-      "type": "text"
     }
   },
   "config": {}

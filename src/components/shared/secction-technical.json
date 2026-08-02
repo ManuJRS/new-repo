@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_secction_technicals",
+  "info": {
+    "displayName": "secction technical",
+    "icon": "doctor"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "iconOne": {
+      "type": "string"
+    },
+    "iconTwo": {
+      "type": "string"
+    },
+    "iconThree": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

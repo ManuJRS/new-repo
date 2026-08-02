@@ -1062,6 +1062,13 @@ export interface ApiWebDevelopWebDevelop extends Struct.SingleTypeSchema {
         'components.web-develop-timeline',
         'components.portfolio-preview',
         'components.web-develop-resources',
+        'components.card-solution',
+        'components.cards-section',
+        'components.how-i-do',
+        'components.comment-secction',
+        'components.cards-title',
+        'components.logos',
+        'components.form-web',
       ]
     >;
     Seo: Schema.Attribute.Component<'components.seo-component', false>;

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_cards_sections",
+  "info": {
+    "displayName": "cards-section",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "Cards": {
+      "type": "component",
+      "component": "shared.secction-technical",
+      "repeatable": true,
+      "min": 3,
+      "max": 3
+    }
+  },
+  "config": {}
+}

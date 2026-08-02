@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_components_card_solutions",
+  "info": {
+    "displayName": "CardSolution",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "Cards": {
+      "type": "component",
+      "component": "shared.solutions-cards",
+      "repeatable": true,
+      "min": 3,
+      "max": 3
+    },
+    "ctaTitle": {
+      "type": "string"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaLink": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

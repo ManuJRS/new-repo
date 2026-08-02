@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_components_how_i_dos",
+  "info": {
+    "displayName": "How I Do",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "Cards": {
+      "type": "component",
+      "component": "shared.how-cards",
+      "repeatable": true
+    },
+    "imageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
