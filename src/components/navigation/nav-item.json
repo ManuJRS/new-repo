@@ -5,13 +5,6 @@
     "icon": "file"
   },
   "options": {},
-  "attributes": {
-    "label": {
-      "type": "string"
-    },
-    "path": {
-      "type": "string"
-    }
-  },
+  "attributes": {},
   "config": {}
 }
