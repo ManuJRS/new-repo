@@ -9,16 +9,38 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
-    "navItems": {
-      "type": "component",
-      "component": "navigation.nav-item",
-      "repeatable": true
-    },
-    "footerText": {
+    "fotterTitleLeft": {
       "type": "string",
-      "default": "Desarrollado por ManuDev"
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Projects"
+    },
+    "fotterMessageRigth": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Web Develop"
+    },
+    "fotterCopyrightTYear": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "2026 Manudev"
     }
   }
 }
