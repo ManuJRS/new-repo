@@ -664,7 +664,10 @@ export interface NavigationNavItem extends Struct.ComponentSchema {
     displayName: 'nav-item';
     icon: 'file';
   };
-  attributes: {};
+  attributes: {
+    label: Schema.Attribute.String;
+    path: Schema.Attribute.String;
+  };
 }
 
 export interface NavigationNavLink extends Struct.ComponentSchema {
