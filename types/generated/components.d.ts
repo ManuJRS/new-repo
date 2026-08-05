@@ -664,10 +664,7 @@ export interface NavigationNavItem extends Struct.ComponentSchema {
     displayName: 'nav-item';
     icon: 'file';
   };
-  attributes: {
-    label: Schema.Attribute.String;
-    path: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 export interface NavigationNavLink extends Struct.ComponentSchema {
@@ -801,6 +798,18 @@ export interface SharedItems extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedItemsnav extends Struct.ComponentSchema {
+  collectionName: 'components_shared_itemsnavs';
+  info: {
+    displayName: 'itemsnav';
+    icon: 'database';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    svg: Schema.Attribute.Enumeration<['house', 'person']>;
+  };
+}
+
 export interface SharedListTags extends Struct.ComponentSchema {
   collectionName: 'components_shared_list_tags';
   info: {
@@ -831,6 +840,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedNav extends Struct.ComponentSchema {
+  collectionName: 'components_shared_navs';
+  info: {
+    displayName: 'nav';
+    icon: 'bulletList';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'shared.itemsnav', true>;
+    showlangs: Schema.Attribute.Boolean;
   };
 }
 
@@ -1075,9 +1096,11 @@ declare module '@strapi/strapi' {
       'shared.how-cards': SharedHowCards;
       'shared.icon-tec': SharedIconTec;
       'shared.items': SharedItems;
+      'shared.itemsnav': SharedItemsnav;
       'shared.list-tags': SharedListTags;
       'shared.listitem': SharedListitem;
       'shared.media': SharedMedia;
+      'shared.nav': SharedNav;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.secction-technical': SharedSecctionTechnical;
