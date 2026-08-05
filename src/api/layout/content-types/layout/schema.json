@@ -41,6 +41,16 @@
         }
       },
       "default": "2026 Manudev"
+    },
+    "nav": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.nav",
+      "repeatable": false
     }
   }
 }

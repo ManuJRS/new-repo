@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_navs",
+  "info": {
+    "displayName": "nav",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "component": "shared.itemsnav",
+      "repeatable": true
+    },
+    "showlangs": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}
