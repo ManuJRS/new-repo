@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_itemsnavs",
+  "info": {
+    "displayName": "itemsnav",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "svg": {
+      "type": "enumeration",
+      "enum": [
+        "house",
+        "person"
+      ]
+    }
+  },
+  "config": {}
+}
