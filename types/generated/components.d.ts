@@ -855,6 +855,17 @@ export interface SharedNav extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedNavItemsFloating extends Struct.ComponentSchema {
+  collectionName: 'components_shared_nav_items_floatings';
+  info: {
+    displayName: 'nav items floating';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -1101,6 +1112,7 @@ declare module '@strapi/strapi' {
       'shared.listitem': SharedListitem;
       'shared.media': SharedMedia;
       'shared.nav': SharedNav;
+      'shared.nav-items-floating': SharedNavItemsFloating;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.secction-technical': SharedSecctionTechnical;
