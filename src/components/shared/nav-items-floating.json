@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_nav_items_floatings",
+  "info": {
+    "displayName": "nav items floating"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
