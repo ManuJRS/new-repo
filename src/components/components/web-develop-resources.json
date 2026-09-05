@@ -12,11 +12,6 @@
     "description": {
       "type": "string"
     },
-    "blogs_articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::blogs-article.blogs-article"
-    },
     "btnText": {
       "type": "string"
     },

@@ -59,7 +59,6 @@ export interface ComponentsCardPreview extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'cover'>;
     intro: Schema.Attribute.String & Schema.Attribute.Required;
     link: Schema.Attribute.String;
-    project: Schema.Attribute.Relation<'oneToOne', 'api::project.project'>;
     text: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -603,10 +602,6 @@ export interface ComponentsWebDevelopResources extends Struct.ComponentSchema {
     icon: 'cup';
   };
   attributes: {
-    blogs_articles: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::blogs-article.blogs-article'
-    >;
     btnText: Schema.Attribute.String;
     btnUrl: Schema.Attribute.String;
     description: Schema.Attribute.String;
