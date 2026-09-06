@@ -640,6 +640,98 @@ export interface ApiLayoutLayout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPopUpPopUp extends Struct.CollectionTypeSchema {
+  collectionName: 'pop_ups';
+  info: {
+    displayName: 'pop-up';
+    pluralName: 'pop-ups';
+    singularName: 'pop-up';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    buttonLink: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    buttonText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    delay: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
+    frequency: Schema.Attribute.Enumeration<
+      ['always', 'once_per_session', 'once_per_visitor']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::pop-up.pop-up'>;
+    message: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    targetHomePage: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
+    targetInfoPage: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
+    targetPages: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-portfolio.project-portfolio'
+    >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectPortfolioProjectPortfolio
   extends Struct.CollectionTypeSchema {
   collectionName: 'project_portfolios';
@@ -1239,6 +1331,7 @@ declare module '@strapi/strapi' {
       'api::home-portfolio.home-portfolio': ApiHomePortfolioHomePortfolio;
       'api::info-portfolio.info-portfolio': ApiInfoPortfolioInfoPortfolio;
       'api::layout.layout': ApiLayoutLayout;
+      'api::pop-up.pop-up': ApiPopUpPopUp;
       'api::project-portfolio.project-portfolio': ApiProjectPortfolioProjectPortfolio;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
