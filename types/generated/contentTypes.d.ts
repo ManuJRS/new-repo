@@ -580,6 +580,12 @@ export interface ApiLayoutLayout extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    form: Schema.Attribute.Component<'components.form-layout', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     fotterCopyrightTYear: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

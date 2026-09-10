@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_components_form_layouts",
+  "info": {
+    "displayName": "formLayout",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "nameLabel": {
+      "type": "string"
+    },
+    "namePlaceholder": {
+      "type": "string"
+    },
+    "emailLabel": {
+      "type": "string"
+    },
+    "emailPlaceholder": {
+      "type": "string"
+    },
+    "messageLabel": {
+      "type": "string"
+    },
+    "messagePlaceholder": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "MessageSucces": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
