@@ -101,6 +101,16 @@
       },
       "component": "shared.nav-items-floating",
       "repeatable": true
+    },
+    "form": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.form-layout",
+      "repeatable": false
     }
   }
 }

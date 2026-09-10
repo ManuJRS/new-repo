@@ -242,6 +242,26 @@ export interface ComponentsExpComponent extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsFormLayout extends Struct.ComponentSchema {
+  collectionName: 'components_components_form_layouts';
+  info: {
+    displayName: 'formLayout';
+    icon: 'discuss';
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    emailLabel: Schema.Attribute.String;
+    emailPlaceholder: Schema.Attribute.String;
+    messageLabel: Schema.Attribute.String;
+    messagePlaceholder: Schema.Attribute.String;
+    MessageSucces: Schema.Attribute.String;
+    nameLabel: Schema.Attribute.String;
+    namePlaceholder: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsFormWeb extends Struct.ComponentSchema {
   collectionName: 'components_components_form_webs';
   info: {
@@ -1069,6 +1089,7 @@ declare module '@strapi/strapi' {
       'components.dasdasd': ComponentsDasdasd;
       'components.description-project': ComponentsDescriptionProject;
       'components.exp-component': ComponentsExpComponent;
+      'components.form-layout': ComponentsFormLayout;
       'components.form-web': ComponentsFormWeb;
       'components.hero-minimalf': ComponentsHeroMinimalf;
       'components.how-i-do': ComponentsHowIDo;
